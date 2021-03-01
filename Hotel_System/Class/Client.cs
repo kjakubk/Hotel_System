@@ -18,10 +18,10 @@ namespace Hotel_System.Class
     {
         //function to insert new customers
         Connect connect = new Connect();
-        public bool insertClient(string firstName, string lastName,string phoneNumber,string country)
+        public bool insertClient( String firstName, String lastName,String phoneNumber,String country)
         {
             MySqlCommand command = new MySqlCommand();
-            string insertQuery = "INSERT INTO `clients`(`First_name`, `Last_name`, `Phone_number`, `Country`) VALUES (@fnm,@snm,@phn,@cou)";
+            String insertQuery = "INSERT INTO `clients`(`First_name`, `Last_name`, `Phone_number`, `Country`) VALUES (@fnm,@snm,@phn,@cou)";
             command.CommandText = insertQuery;
             command.Connection = connect.GetConnection();
 
@@ -61,6 +61,8 @@ namespace Hotel_System.Class
 
             return table;
         }
+
+
         /// <summary>
         /// Edit data in DB
         /// </summary>
@@ -70,10 +72,64 @@ namespace Hotel_System.Class
         /// <param name="phoneNumber"></param>
         /// <param name="country"></param>
         /// <returns>Edited data</returns>
-        public bool editClient(int id, string firstName, string lastName, string phoneNumber, string country)
+        /// 
+
+
+        public bool editClient(int id, String firstName, String lastName, String phoneNumber, String country)
         {
-            int ida = 3;
-            return true;
+            MySqlCommand command = new MySqlCommand();
+            String editQuery = "UPDATE `clients` SET `First_name`= @fnm,`Last_name`= @snm,`Phone_number`= @phn ,`Country`= @cou WHERE `ID`= @cid";
+            command.CommandText = editQuery;
+            command.Connection = connect.GetConnection();
+
+
+            //@cid,@fnm,@snm,@phn,@cou
+            command.Parameters.Add("@cid", MySqlDbType.Int32).Value = id;
+            command.Parameters.Add("@fnm", MySqlDbType.VarChar).Value = firstName;
+            command.Parameters.Add("@snm", MySqlDbType.VarChar).Value = lastName;
+            command.Parameters.Add("@phn", MySqlDbType.VarChar).Value = phoneNumber;
+            command.Parameters.Add("@cou", MySqlDbType.VarChar).Value = country;
+
+            connect.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                connect.closeConnection();
+                return true;
+            }
+            else
+            {
+                connect.closeConnection();
+                return false;
+            }
+            
+        }
+        /// <summary>
+        /// Remove data from DB
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool removeClient(int id)
+        {
+            MySqlCommand command = new MySqlCommand();
+            String removeQuery = "DELETE FROM `clients` WHERE `ID`=@cid";
+            command.CommandText = removeQuery;
+            command.Connection = connect.GetConnection();
+
+            command.Parameters.Add("@cid", MySqlDbType.Int32).Value = id;
+
+            connect.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+            {
+                connect.closeConnection();
+                return true;
+            }
+            else
+            {
+                connect.closeConnection();
+                return false;
+            }
         }
     }
 }

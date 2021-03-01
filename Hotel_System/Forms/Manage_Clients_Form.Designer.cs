@@ -31,9 +31,9 @@ namespace Hotel_System
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonClearFields = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRemoveClient = new System.Windows.Forms.Button();
+            this.buttonEditClient = new System.Windows.Forms.Button();
+            this.buttonAddClient = new System.Windows.Forms.Button();
             this.dataGridViewClient = new System.Windows.Forms.DataGridView();
             this.textBoxCountry = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,9 +57,9 @@ namespace Hotel_System
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.buttonClearFields);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonRemoveClient);
+            this.panel1.Controls.Add(this.buttonEditClient);
+            this.panel1.Controls.Add(this.buttonAddClient);
             this.panel1.Controls.Add(this.dataGridViewClient);
             this.panel1.Controls.Add(this.textBoxCountry);
             this.panel1.Controls.Add(this.label6);
@@ -90,36 +90,38 @@ namespace Hotel_System
             this.buttonClearFields.UseVisualStyleBackColor = true;
             this.buttonClearFields.Click += new System.EventHandler(this.buttonClearFields_Click);
             // 
-            // button3
+            // buttonRemoveClient
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(206, 471);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 50);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Remove";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonRemoveClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRemoveClient.Location = new System.Drawing.Point(206, 471);
+            this.buttonRemoveClient.Name = "buttonRemoveClient";
+            this.buttonRemoveClient.Size = new System.Drawing.Size(150, 50);
+            this.buttonRemoveClient.TabIndex = 14;
+            this.buttonRemoveClient.Text = "Remove";
+            this.buttonRemoveClient.UseVisualStyleBackColor = true;
+            this.buttonRemoveClient.Click += new System.EventHandler(this.buttonRemoveClient_Click);
             // 
-            // button2
+            // buttonEditClient
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(362, 471);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 50);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonEditClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonEditClient.Location = new System.Drawing.Point(362, 471);
+            this.buttonEditClient.Name = "buttonEditClient";
+            this.buttonEditClient.Size = new System.Drawing.Size(150, 50);
+            this.buttonEditClient.TabIndex = 13;
+            this.buttonEditClient.Text = "Edit";
+            this.buttonEditClient.UseVisualStyleBackColor = true;
+            this.buttonEditClient.Click += new System.EventHandler(this.buttonEditClient_Click);
             // 
-            // button1
+            // buttonAddClient
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(50, 471);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 50);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Add new client";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddClient.Location = new System.Drawing.Point(50, 471);
+            this.buttonAddClient.Name = "buttonAddClient";
+            this.buttonAddClient.Size = new System.Drawing.Size(150, 50);
+            this.buttonAddClient.TabIndex = 12;
+            this.buttonAddClient.Text = "Add new client";
+            this.buttonAddClient.UseVisualStyleBackColor = true;
+            this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
             // 
             // dataGridViewClient
             // 
@@ -133,6 +135,7 @@ namespace Hotel_System
             this.dataGridViewClient.RowTemplate.Height = 24;
             this.dataGridViewClient.Size = new System.Drawing.Size(701, 582);
             this.dataGridViewClient.TabIndex = 11;
+            this.dataGridViewClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClient_CellClick);
             // 
             // textBoxCountry
             // 
@@ -209,16 +212,17 @@ namespace Hotel_System
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxID.Location = new System.Drawing.Point(218, 154);
+            this.textBoxID.Location = new System.Drawing.Point(342, 154);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(294, 34);
+            this.textBoxID.ReadOnly = true;
+            this.textBoxID.Size = new System.Drawing.Size(64, 34);
             this.textBoxID.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(167, 154);
+            this.label2.Location = new System.Drawing.Point(288, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 29);
             this.label2.TabIndex = 1;
@@ -282,8 +286,8 @@ namespace Hotel_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewClient;
         private System.Windows.Forms.Button buttonClearFields;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRemoveClient;
+        private System.Windows.Forms.Button buttonEditClient;
+        private System.Windows.Forms.Button buttonAddClient;
     }
 }
