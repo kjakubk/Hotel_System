@@ -61,6 +61,19 @@ namespace Hotel_System.Class
 
             return table;
         }
+        /// <summary>
+        /// Edit data in DB
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="phoneNumber"></param>
+        /// <param name="country"></param>
+        /// <returns>Edited data</returns>
+        public bool editClient(int id, string firstName, string lastName, string phoneNumber, string country)
+        {
+            return;
+        }
     }
 }
 

@@ -123,9 +123,12 @@ namespace Hotel_System
             // 
             // dataGridViewClient
             // 
+            this.dataGridViewClient.AllowUserToAddRows = false;
+            this.dataGridViewClient.AllowUserToDeleteRows = false;
             this.dataGridViewClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClient.Location = new System.Drawing.Point(554, 154);
             this.dataGridViewClient.Name = "dataGridViewClient";
+            this.dataGridViewClient.ReadOnly = true;
             this.dataGridViewClient.RowHeadersWidth = 51;
             this.dataGridViewClient.RowTemplate.Height = 24;
             this.dataGridViewClient.Size = new System.Drawing.Size(701, 582);

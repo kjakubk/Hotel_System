@@ -58,6 +58,7 @@ namespace Hotel_System
 
                 if (insertClient)
                 {
+                    dataGridViewClient.DataSource = client.GetClients();
                     MessageBox.Show("New Client Added Successfuly", "Client Add", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
