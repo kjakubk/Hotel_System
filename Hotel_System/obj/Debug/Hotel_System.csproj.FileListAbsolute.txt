@@ -1,0 +1,10 @@
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.csprojAssemblyReference.cache
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.LoginForm.resources
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.Properties.Resources.resources
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.csproj.GenerateResource.cache
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.csproj.CoreCompileInputs.cache
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\bin\Debug\Hotel_System.exe.config
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\bin\Debug\Hotel_System.exe
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\bin\Debug\Hotel_System.pdb
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.exe
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.pdb
