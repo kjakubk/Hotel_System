@@ -140,6 +140,7 @@ namespace Hotel_System
                 {
                     dataGridViewClient.DataSource = client.GetClients();
                     MessageBox.Show("Client Data Removed Successfuly", "Client Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    buttonClearFields.PerformClick();
                 }
                 else
                 {

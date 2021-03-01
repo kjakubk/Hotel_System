@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Class\Client.cs" />
     <Compile Include="Class\Connect.cs" />
+    <Compile Include="Class\Room.cs" />
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

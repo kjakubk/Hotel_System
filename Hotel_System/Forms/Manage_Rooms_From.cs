@@ -16,5 +16,7 @@ namespace Hotel_System
         {
             InitializeComponent();
         }
+
+    
     }
 }
