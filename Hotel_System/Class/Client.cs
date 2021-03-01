@@ -72,7 +72,8 @@ namespace Hotel_System.Class
         /// <returns>Edited data</returns>
         public bool editClient(int id, string firstName, string lastName, string phoneNumber, string country)
         {
-            return;
+            int ida = 3;
+            return true;
         }
     }
 }
