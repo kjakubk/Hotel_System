@@ -109,6 +109,7 @@ namespace Hotel_System
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(374, 38);
             this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.Text = "admin";
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // textBoxUsername
@@ -118,6 +119,7 @@ namespace Hotel_System
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(374, 38);
             this.textBoxUsername.TabIndex = 2;
+            this.textBoxUsername.Text = "admin";
             // 
             // label3
             // 
@@ -152,7 +154,7 @@ namespace Hotel_System
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

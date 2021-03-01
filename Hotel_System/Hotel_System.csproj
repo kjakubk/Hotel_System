@@ -50,26 +50,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connect.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Class\Client.cs" />
+    <Compile Include="Class\Connect.cs" />
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main_Form.cs">
+    <Compile Include="Forms\Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main_Form.Designer.cs">
+    <Compile Include="Forms\Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage_Clients_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage_Clients_Form.Designer.cs">
+      <DependentUpon>Manage_Clients_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage_Reservations_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage_Reservations_Form.Designer.cs">
+      <DependentUpon>Manage_Reservations_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Manage_Rooms_From.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Manage_Rooms_From.Designer.cs">
+      <DependentUpon>Manage_Rooms_From.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main_Form.resx">
+    <EmbeddedResource Include="Forms\Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage_Clients_Form.resx">
+      <DependentUpon>Manage_Clients_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage_Reservations_Form.resx">
+      <DependentUpon>Manage_Reservations_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Manage_Rooms_From.resx">
+      <DependentUpon>Manage_Rooms_From.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,5 +125,6 @@
   <ItemGroup>
     <Content Include="Assets\user.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

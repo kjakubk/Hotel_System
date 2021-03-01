@@ -25,3 +25,6 @@ C:\Users\jakub\source\repos\Hotel_System\Hotel_System\bin\Debug\MySql.Data.xml
 C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.exe.config
 C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.csproj.CopyComplete
 C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.Main_Form.resources
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.Manage_Clients_Form.resources
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.Manage_Reservations_Form.resources
+C:\Users\jakub\source\repos\Hotel_System\Hotel_System\obj\Debug\Hotel_System.Manage_Rooms_From.resources

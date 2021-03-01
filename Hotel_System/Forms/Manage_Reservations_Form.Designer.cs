@@ -1,7 +1,7 @@
 ﻿
 namespace Hotel_System
 {
-    partial class Manage_Rooms_From
+    partial class Manage_Reservations_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,18 @@ namespace Hotel_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Manage_Reservations_Form
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Manage_Rooms_From";
+            this.Name = "Manage_Reservations_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Manage_Reservations_Form";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

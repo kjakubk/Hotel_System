@@ -54,18 +54,21 @@ namespace Hotel_System
             this.manageClientToolStripMenuItem.Name = "manageClientToolStripMenuItem";
             this.manageClientToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.manageClientToolStripMenuItem.Text = "Manage Client";
+            this.manageClientToolStripMenuItem.Click += new System.EventHandler(this.manageClientToolStripMenuItem_Click);
             // 
             // manageReservationToolStripMenuItem
             // 
             this.manageReservationToolStripMenuItem.Name = "manageReservationToolStripMenuItem";
             this.manageReservationToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.manageReservationToolStripMenuItem.Text = "Manage Reservation";
+            this.manageReservationToolStripMenuItem.Click += new System.EventHandler(this.manageReservationToolStripMenuItem_Click);
             // 
             // manageRoomsToolStripMenuItem
             // 
             this.manageRoomsToolStripMenuItem.Name = "manageRoomsToolStripMenuItem";
             this.manageRoomsToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.manageRoomsToolStripMenuItem.Text = "Manage Rooms";
+            this.manageRoomsToolStripMenuItem.Click += new System.EventHandler(this.manageRoomsToolStripMenuItem_Click);
             // 
             // Main_Form
             // 
