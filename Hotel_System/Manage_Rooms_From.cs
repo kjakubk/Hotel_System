@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel_System
 {
-    public partial class Main_Form : Form
+    public partial class Manage_Rooms_From : Form
     {
-        public Main_Form()
+        public Manage_Rooms_From()
         {
             InitializeComponent();
-        }
-
-        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit(); 
         }
     }
 }
