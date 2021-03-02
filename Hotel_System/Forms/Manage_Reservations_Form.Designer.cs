@@ -35,6 +35,7 @@ namespace Hotel_System
             this.buttonEditReservation = new System.Windows.Forms.Button();
             this.buttonAddReservation = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePickerDateOut = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDateIn = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,9 +48,8 @@ namespace Hotel_System
             this.textBoxClientID = new System.Windows.Forms.TextBox();
             this.RoomNumber = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePickerDateOut = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
             this.panel2.SuspendLayout();
@@ -66,6 +66,7 @@ namespace Hotel_System
             this.comboBoxRoomType.Size = new System.Drawing.Size(222, 30);
             this.comboBoxRoomType.TabIndex = 16;
             this.comboBoxRoomType.Tag = "------------";
+            this.comboBoxRoomType.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoomType_SelectedIndexChanged);
             // 
             // buttonClearFields
             // 
@@ -151,6 +152,16 @@ namespace Hotel_System
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(962, 631);
             this.panel1.TabIndex = 2;
+            // 
+            // dateTimePickerDateOut
+            // 
+            this.dateTimePickerDateOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePickerDateOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDateOut.Location = new System.Drawing.Point(163, 266);
+            this.dateTimePickerDateOut.Name = "dateTimePickerDateOut";
+            this.dateTimePickerDateOut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateTimePickerDateOut.Size = new System.Drawing.Size(133, 29);
+            this.dateTimePickerDateOut.TabIndex = 24;
             // 
             // dateTimePickerDateIn
             // 
@@ -283,19 +294,6 @@ namespace Hotel_System
             this.panel2.Size = new System.Drawing.Size(962, 56);
             this.panel2.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(962, 56);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Reservation";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(141)))), ((int)(((byte)(153)))));
@@ -310,15 +308,18 @@ namespace Hotel_System
             this.label7.Text = "Manage Reservations";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePickerDateOut
+            // label1
             // 
-            this.dateTimePickerDateOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePickerDateOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDateOut.Location = new System.Drawing.Point(163, 266);
-            this.dateTimePickerDateOut.Name = "dateTimePickerDateOut";
-            this.dateTimePickerDateOut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateTimePickerDateOut.Size = new System.Drawing.Size(133, 29);
-            this.dateTimePickerDateOut.TabIndex = 24;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(962, 56);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Manage Reservation";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Manage_Reservations_Form
             // 
@@ -330,6 +331,7 @@ namespace Hotel_System
             this.Name = "Manage_Reservations_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage_Reservations_Form";
+            this.Load += new System.EventHandler(this.Manage_Reservations_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).EndInit();

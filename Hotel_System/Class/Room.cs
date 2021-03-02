@@ -69,7 +69,7 @@ namespace Hotel_System.Class
             return table;
         }
 
-        public bool editRoom(int roomNumber, int RoomType, String phoneNumber, String isAvailable)
+        public bool editRoom(int roomNumber, int roomType, String phoneNumber, String isAvailable)
         {
             MySqlCommand command = new MySqlCommand();
             String editQuery = "UPDATE `rooms` SET `RoomType`=@rty,`RoomPhone`=@phn,`Available`=@isa WHERE `RoomNumber`=@rnm";
@@ -79,7 +79,7 @@ namespace Hotel_System.Class
 
             //@cid,@fnm,@snm,@phn,@cou
             command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
-            command.Parameters.Add("@rty", MySqlDbType.Int32).Value = RoomType;
+            command.Parameters.Add("@rty", MySqlDbType.Int32).Value = roomType;
             command.Parameters.Add("@phn", MySqlDbType.VarChar).Value = phoneNumber;
             command.Parameters.Add("@isa", MySqlDbType.VarChar).Value = isAvailable;
 
@@ -121,5 +121,18 @@ namespace Hotel_System.Class
             }
         }
 
+        public DataTable roomByTypeList(int roomType)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `rooms` WHERE `RoomType` = @rty", connect.GetConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            command.Parameters.Add("@rty", MySqlDbType.Int32).Value = roomType;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return table;
+        }
     }
 }
