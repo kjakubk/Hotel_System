@@ -61,8 +61,6 @@ namespace Hotel_System.Class
 
             return table;
         }
-
-
         /// <summary>
         /// Edit data in DB
         /// </summary>
@@ -73,8 +71,6 @@ namespace Hotel_System.Class
         /// <param name="country"></param>
         /// <returns>Edited data</returns>
         /// 
-
-
         public bool editClient(int id, String firstName, String lastName, String phoneNumber, String country)
         {
             MySqlCommand command = new MySqlCommand();

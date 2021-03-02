@@ -96,18 +96,17 @@ namespace Hotel_System
             }
             catch (Exception ex)
             {
-              MessageBox.Show(ex.Message, "ID Error moja wina", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              MessageBox.Show(ex.Message, "ID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-        }
-
-    
+        } 
 
         /// <summary>
         /// Displey selected data from DB
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
         private void dataGridViewClient_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxID.Text = dataGridViewClient.CurrentRow.Cells[0].Value.ToString();
@@ -142,5 +141,6 @@ namespace Hotel_System
 
             }
         }
+
     }
 }

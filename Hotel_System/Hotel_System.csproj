@@ -124,7 +124,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\hotel.png" />
+    <Content Include="Assets\kisspng-computer-icons-user-icon-design-numerous-5ad8d538030372.9762584815241598000124.png" />
     <Content Include="Assets\user.png" />
+    <Content Include="Assets\userr.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

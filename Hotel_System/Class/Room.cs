@@ -16,10 +16,6 @@ namespace Hotel_System.Class
     {
         Connect connect = new Connect();
 
-        /// <summary>
-        /// Get data from DB
-        /// </summary>
-        /// <returns>Data</returns>
         public DataTable roomTypeList()
         {
             MySqlCommand command = new MySqlCommand("SELECT * FROM `rooms_category`", connect.GetConnection());
@@ -72,8 +68,6 @@ namespace Hotel_System.Class
 
             return table;
         }
-
-        //Edit the room.
 
         public bool editRoom(int roomNumber, int RoomType, String phoneNumber, String isAvilable)
         {

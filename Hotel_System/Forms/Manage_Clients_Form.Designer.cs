@@ -47,6 +47,7 @@ namespace Hotel_System
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,7 +56,7 @@ namespace Hotel_System
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(141)))), ((int)(((byte)(153)))));
             this.panel1.Controls.Add(this.buttonClearFields);
             this.panel1.Controls.Add(this.buttonRemoveClient);
             this.panel1.Controls.Add(this.buttonEditClient);
@@ -74,58 +75,67 @@ namespace Hotel_System
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(962, 608);
+            this.panel1.Size = new System.Drawing.Size(962, 629);
             this.panel1.TabIndex = 0;
-            
             // 
             // buttonClearFields
             // 
+            this.buttonClearFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
+            this.buttonClearFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonClearFields.CausesValidation = false;
             this.buttonClearFields.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonClearFields.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
             this.buttonClearFields.Location = new System.Drawing.Point(11, 440);
-            this.buttonClearFields.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonClearFields.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClearFields.Name = "buttonClearFields";
             this.buttonClearFields.Size = new System.Drawing.Size(401, 41);
             this.buttonClearFields.TabIndex = 15;
             this.buttonClearFields.Text = "Clear fields";
-            this.buttonClearFields.UseVisualStyleBackColor = true;
+            this.buttonClearFields.UseVisualStyleBackColor = false;
             this.buttonClearFields.Click += new System.EventHandler(this.buttonClearFields_Click);
             // 
             // buttonRemoveClient
             // 
+            this.buttonRemoveClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
             this.buttonRemoveClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRemoveClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
             this.buttonRemoveClient.Location = new System.Drawing.Point(154, 383);
-            this.buttonRemoveClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRemoveClient.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRemoveClient.Name = "buttonRemoveClient";
             this.buttonRemoveClient.Size = new System.Drawing.Size(112, 41);
             this.buttonRemoveClient.TabIndex = 14;
             this.buttonRemoveClient.Text = "Remove";
-            this.buttonRemoveClient.UseVisualStyleBackColor = true;
+            this.buttonRemoveClient.UseVisualStyleBackColor = false;
             this.buttonRemoveClient.Click += new System.EventHandler(this.buttonRemoveClient_Click);
             // 
             // buttonEditClient
             // 
+            this.buttonEditClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
             this.buttonEditClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonEditClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
             this.buttonEditClient.Location = new System.Drawing.Point(272, 383);
-            this.buttonEditClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEditClient.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditClient.Name = "buttonEditClient";
             this.buttonEditClient.Size = new System.Drawing.Size(140, 41);
             this.buttonEditClient.TabIndex = 13;
             this.buttonEditClient.Text = "Edit";
-            this.buttonEditClient.UseVisualStyleBackColor = true;
+            this.buttonEditClient.UseVisualStyleBackColor = false;
             this.buttonEditClient.Click += new System.EventHandler(this.buttonEditClient_Click);
             // 
             // buttonAddClient
             // 
+            this.buttonAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
             this.buttonAddClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
             this.buttonAddClient.Location = new System.Drawing.Point(10, 383);
-            this.buttonAddClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddClient.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddClient.Name = "buttonAddClient";
             this.buttonAddClient.Size = new System.Drawing.Size(140, 41);
             this.buttonAddClient.TabIndex = 12;
             this.buttonAddClient.Text = "Add new client";
-            this.buttonAddClient.UseVisualStyleBackColor = true;
+            this.buttonAddClient.UseVisualStyleBackColor = false;
             this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
             // 
             // dataGridViewClient
@@ -133,8 +143,8 @@ namespace Hotel_System
             this.dataGridViewClient.AllowUserToAddRows = false;
             this.dataGridViewClient.AllowUserToDeleteRows = false;
             this.dataGridViewClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClient.Location = new System.Drawing.Point(416, 125);
-            this.dataGridViewClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewClient.Location = new System.Drawing.Point(416, 84);
+            this.dataGridViewClient.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewClient.Name = "dataGridViewClient";
             this.dataGridViewClient.ReadOnly = true;
             this.dataGridViewClient.RowHeadersWidth = 51;
@@ -147,7 +157,7 @@ namespace Hotel_System
             // 
             this.textBoxCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxCountry.Location = new System.Drawing.Point(164, 322);
-            this.textBoxCountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCountry.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCountry.Name = "textBoxCountry";
             this.textBoxCountry.Size = new System.Drawing.Size(222, 28);
             this.textBoxCountry.TabIndex = 10;
@@ -167,7 +177,7 @@ namespace Hotel_System
             // 
             this.textBoxPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(164, 275);
-            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             this.textBoxPhoneNumber.Size = new System.Drawing.Size(222, 28);
             this.textBoxPhoneNumber.TabIndex = 8;
@@ -187,7 +197,7 @@ namespace Hotel_System
             // 
             this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLastName.Location = new System.Drawing.Point(164, 224);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(222, 28);
             this.textBoxLastName.TabIndex = 6;
@@ -207,7 +217,7 @@ namespace Hotel_System
             // 
             this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxFirstName.Location = new System.Drawing.Point(164, 176);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(222, 28);
             this.textBoxFirstName.TabIndex = 4;
@@ -227,7 +237,7 @@ namespace Hotel_System
             // 
             this.textBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxID.Location = new System.Drawing.Point(256, 125);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.ReadOnly = true;
             this.textBoxID.Size = new System.Drawing.Size(49, 28);
@@ -247,15 +257,17 @@ namespace Hotel_System
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(69)))), ((int)(((byte)(172)))));
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(962, 56);
             this.panel2.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(141)))), ((int)(((byte)(153)))));
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -266,15 +278,28 @@ namespace Hotel_System
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Clients";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(141)))), ((int)(((byte)(153)))));
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Verdana", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(962, 56);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Manage Clients";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Manage_Clients_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 608);
+            this.ClientSize = new System.Drawing.Size(962, 629);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Manage_Clients_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage_Clients_Form";
@@ -308,5 +333,6 @@ namespace Hotel_System
         private System.Windows.Forms.Button buttonRemoveClient;
         private System.Windows.Forms.Button buttonEditClient;
         private System.Windows.Forms.Button buttonAddClient;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -32,22 +32,38 @@ namespace Hotel_System
 
         private void buttonAddRoom_Click(object sender, EventArgs e)
         {
-            int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
+            
             int roomType = Convert.ToInt32(comboBoxRoomType.SelectedValue.ToString());
             String phoneNumber = textBoxPhoneNumber.Text;
+            String isAvilable = "";
 
-            if(room.insertRoom(roomNumber,roomType,phoneNumber,"YES"))
+            try
             {
-                MessageBox.Show("Room added successfully", "Add room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
+                if (radioButtonYes.Checked)
+                {
+                    isAvilable = "YES";
+                }
+                else if (radioButtonNo.Checked)
+                {
+                    isAvilable = "NO";
+                }
 
-                dataGridViewClient.DataSource = room.GetRooms();
+                if (room.insertRoom(roomNumber, roomType, phoneNumber, isAvilable))
+                {
+                    MessageBox.Show("Room added successfully", "Add room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dataGridViewClient.DataSource = room.GetRooms();
+                }
+                else
+                {
+                    MessageBox.Show("Something goes wrong", "Add room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex )
             {
-                MessageBox.Show("Something goes wrong", "Add room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            
+                MessageBox.Show(ex.Message, "ROOM NUMBER ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void buttonClearFields_Click(object sender, EventArgs e)
@@ -55,6 +71,7 @@ namespace Hotel_System
             textBoxRoomNumber.Text = "";
             comboBoxRoomType.SelectedValue = 0;
             textBoxPhoneNumber.Text = "";
+            radioButtonYes.Checked = true;
         }
 
         private void dataGridViewClient_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -62,51 +79,79 @@ namespace Hotel_System
             textBoxRoomNumber.Text = dataGridViewClient.CurrentRow.Cells[0].Value.ToString();
             comboBoxRoomType.SelectedValue = dataGridViewClient.CurrentRow.Cells[1].Value;
             textBoxPhoneNumber.Text = dataGridViewClient.CurrentRow.Cells[2].Value.ToString();
+            String isAvilable= dataGridViewClient.CurrentRow.Cells[3].Value.ToString();
 
+
+            if(isAvilable.Equals("YES"))
+            {
+                radioButtonYes.Checked = true;
+            }
+            else if(isAvilable.Equals("NO"))
+            {
+                radioButtonNo.Checked = false;
+            }
             dataGridViewClient.DataSource = room.GetRooms();
         }
 
         private void buttonEditRoom_Click(object sender, EventArgs e)
         {
-            int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
+           
             int roomType = Convert.ToInt32(comboBoxRoomType.SelectedValue.ToString());
             String phoneNumber = textBoxPhoneNumber.Text;
             String isAvilable = "";
+            try
+            {
+                int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
+                if (radioButtonYes.Checked)
+                {
+                    isAvilable = "YES";
+                }
+                else if (radioButtonNo.Checked)
+                {
+                    isAvilable = "NO";
+                }
 
-            if(radioButtonYes.Checked)
-            {
-                isAvilable = "YES";
+                if (room.editRoom(roomNumber, roomType, phoneNumber, isAvilable))
+                {
+                    MessageBox.Show("You successfuly edit room", "Room edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dataGridViewClient.DataSource = room.GetRooms();
+                }
+                else
+                {
+                    MessageBox.Show("Smotehing goes wrong", "Room edit error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (radioButtonNo.Checked)
+            catch (Exception ex)
             {
-                isAvilable= "NO";
+
+                MessageBox.Show(ex.Message, "ROOM NUMBER ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             
-            if(room.editRoom(roomNumber,roomType,phoneNumber,isAvilable))
-            {
-                MessageBox.Show("You successfuly edit room", "Room edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                dataGridViewClient.DataSource = room.GetRooms();
-            }
-            else
-            {
-                MessageBox.Show("Smotehing goes wrong", "Room edit error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void buttonRemoveRoom_Click(object sender, EventArgs e)
         {
-            int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
-
-            if (room.removeRoom(roomNumber))
+            try
             {
-                MessageBox.Show("Room remove successfully", "Remove room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
 
-                dataGridViewClient.DataSource = room.GetRooms();
+                if (room.removeRoom(roomNumber))
+                {
+                    MessageBox.Show("Room remove successfully", "Remove room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dataGridViewClient.DataSource = room.GetRooms();
+                }
+                else
+                {
+                    MessageBox.Show("Something goes wrong", "Remove room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Something goes wrong", "Remove room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(ex.Message, "ROOM NUMBER ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
