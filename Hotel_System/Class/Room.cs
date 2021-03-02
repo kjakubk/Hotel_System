@@ -28,10 +28,10 @@ namespace Hotel_System.Class
             return table;
         }
 
-        public bool insertRoom(int roomNumber, int RoomType, String phoneNumber, String isAvilable)
+        public bool insertRoom(int roomNumber, int RoomType, String phoneNumber, String isAvailable)
         {
             MySqlCommand command = new MySqlCommand();
-            String insertQuery = "INSERT INTO `rooms`(`RoomNumber`, `RoomType`, `RoomPhone`, `Avilable`) VALUES (@rnm,@rty,@phn,@isa)";
+            String insertQuery = "INSERT INTO `rooms`(`RoomNumber`, `RoomType`, `RoomPhone`, `Available`) VALUES (@rnm,@rty,@phn,@isa)";
             command.CommandText = insertQuery;
             command.Connection = connect.GetConnection();
 
@@ -40,7 +40,7 @@ namespace Hotel_System.Class
             command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
             command.Parameters.Add("@rty", MySqlDbType.Int32).Value = RoomType;
             command.Parameters.Add("@phn", MySqlDbType.VarChar).Value = phoneNumber;
-            command.Parameters.Add("@isa", MySqlDbType.VarChar).Value = isAvilable;
+            command.Parameters.Add("@isa", MySqlDbType.VarChar).Value = isAvailable;
 
             connect.openConnection();
 
@@ -69,10 +69,10 @@ namespace Hotel_System.Class
             return table;
         }
 
-        public bool editRoom(int roomNumber, int RoomType, String phoneNumber, String isAvilable)
+        public bool editRoom(int roomNumber, int RoomType, String phoneNumber, String isAvailable)
         {
             MySqlCommand command = new MySqlCommand();
-            String editQuery = "UPDATE `rooms` SET `RoomType`=@rty,`RoomPhone`=@phn,`Avilable`=@isa WHERE `RoomNumber`=@rnm";
+            String editQuery = "UPDATE `rooms` SET `RoomType`=@rty,`RoomPhone`=@phn,`Available`=@isa WHERE `RoomNumber`=@rnm";
             command.CommandText = editQuery;
             command.Connection = connect.GetConnection();
 
@@ -81,7 +81,7 @@ namespace Hotel_System.Class
             command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
             command.Parameters.Add("@rty", MySqlDbType.Int32).Value = RoomType;
             command.Parameters.Add("@phn", MySqlDbType.VarChar).Value = phoneNumber;
-            command.Parameters.Add("@isa", MySqlDbType.VarChar).Value = isAvilable;
+            command.Parameters.Add("@isa", MySqlDbType.VarChar).Value = isAvailable;
 
             connect.openConnection();
 

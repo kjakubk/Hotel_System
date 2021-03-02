@@ -272,9 +272,9 @@ namespace Hotel_System
             this.label3.Location = new System.Drawing.Point(91, 244);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 24);
+            this.label3.Size = new System.Drawing.Size(121, 24);
             this.label3.TabIndex = 17;
-            this.label3.Text = "   Avilable:   ";
+            this.label3.Text = "   Available:   ";
             // 
             // comboBoxRoomType
             // 

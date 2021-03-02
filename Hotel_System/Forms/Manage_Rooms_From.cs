@@ -35,21 +35,21 @@ namespace Hotel_System
             
             int roomType = Convert.ToInt32(comboBoxRoomType.SelectedValue.ToString());
             String phoneNumber = textBoxPhoneNumber.Text;
-            String isAvilable = "";
+            String isAvailable = "";
 
             try
             {
                 int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
                 if (radioButtonYes.Checked)
                 {
-                    isAvilable = "YES";
+                    isAvailable = "YES";
                 }
                 else if (radioButtonNo.Checked)
                 {
-                    isAvilable = "NO";
+                    isAvailable = "NO";
                 }
 
-                if (room.insertRoom(roomNumber, roomType, phoneNumber, isAvilable))
+                if (room.insertRoom(roomNumber, roomType, phoneNumber, isAvailable))
                 {
                     MessageBox.Show("Room added successfully", "Add room", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -79,14 +79,14 @@ namespace Hotel_System
             textBoxRoomNumber.Text = dataGridViewClient.CurrentRow.Cells[0].Value.ToString();
             comboBoxRoomType.SelectedValue = dataGridViewClient.CurrentRow.Cells[1].Value;
             textBoxPhoneNumber.Text = dataGridViewClient.CurrentRow.Cells[2].Value.ToString();
-            String isAvilable= dataGridViewClient.CurrentRow.Cells[3].Value.ToString();
+            String isAvailable= dataGridViewClient.CurrentRow.Cells[3].Value.ToString();
 
 
-            if(isAvilable.Equals("YES"))
+            if(isAvailable.Equals("YES"))
             {
                 radioButtonYes.Checked = true;
             }
-            else if(isAvilable.Equals("NO"))
+            else if(isAvailable.Equals("NO"))
             {
                 radioButtonNo.Checked = false;
             }
@@ -95,23 +95,23 @@ namespace Hotel_System
 
         private void buttonEditRoom_Click(object sender, EventArgs e)
         {
-           
+            
             int roomType = Convert.ToInt32(comboBoxRoomType.SelectedValue.ToString());
             String phoneNumber = textBoxPhoneNumber.Text;
-            String isAvilable = "";
+            String isAvailable = "";
             try
             {
                 int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
                 if (radioButtonYes.Checked)
                 {
-                    isAvilable = "YES";
+                    isAvailable = "YES";
                 }
                 else if (radioButtonNo.Checked)
                 {
-                    isAvilable = "NO";
+                    isAvailable = "NO";
                 }
 
-                if (room.editRoom(roomNumber, roomType, phoneNumber, isAvilable))
+                if (room.editRoom(roomNumber, roomType, phoneNumber, isAvailable))
                 {
                     MessageBox.Show("You successfuly edit room", "Room edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -119,7 +119,7 @@ namespace Hotel_System
                 }
                 else
                 {
-                    MessageBox.Show("Smotehing goes wrong", "Room edit error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Something went wrong", "Room edit error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -145,7 +145,7 @@ namespace Hotel_System
                 }
                 else
                 {
-                    MessageBox.Show("Something goes wrong", "Remove room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Something went wrong", "Remove room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

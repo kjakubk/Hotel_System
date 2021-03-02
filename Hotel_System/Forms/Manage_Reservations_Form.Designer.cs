@@ -31,9 +31,9 @@ namespace Hotel_System
         {
             this.comboBoxRoomType = new System.Windows.Forms.ComboBox();
             this.buttonClearFields = new System.Windows.Forms.Button();
-            this.buttonRemoveRoom = new System.Windows.Forms.Button();
-            this.buttonEditRoom = new System.Windows.Forms.Button();
-            this.buttonAddRoom = new System.Windows.Forms.Button();
+            this.buttonRemoveReservation = new System.Windows.Forms.Button();
+            this.buttonEditReservation = new System.Windows.Forms.Button();
+            this.buttonAddReservation = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePickerDateIn = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,45 +79,49 @@ namespace Hotel_System
             this.buttonClearFields.TabIndex = 15;
             this.buttonClearFields.Text = "Clear fields";
             this.buttonClearFields.UseVisualStyleBackColor = false;
+            this.buttonClearFields.Click += new System.EventHandler(this.buttonClearFields_Click);
             // 
-            // buttonRemoveRoom
+            // buttonRemoveReservation
             // 
-            this.buttonRemoveRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
-            this.buttonRemoveRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRemoveRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
-            this.buttonRemoveRoom.Location = new System.Drawing.Point(154, 486);
-            this.buttonRemoveRoom.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonRemoveRoom.Name = "buttonRemoveRoom";
-            this.buttonRemoveRoom.Size = new System.Drawing.Size(112, 41);
-            this.buttonRemoveRoom.TabIndex = 14;
-            this.buttonRemoveRoom.Text = "Remove";
-            this.buttonRemoveRoom.UseVisualStyleBackColor = false;
+            this.buttonRemoveReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
+            this.buttonRemoveReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRemoveReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
+            this.buttonRemoveReservation.Location = new System.Drawing.Point(154, 486);
+            this.buttonRemoveReservation.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRemoveReservation.Name = "buttonRemoveReservation";
+            this.buttonRemoveReservation.Size = new System.Drawing.Size(112, 41);
+            this.buttonRemoveReservation.TabIndex = 14;
+            this.buttonRemoveReservation.Text = "Remove";
+            this.buttonRemoveReservation.UseVisualStyleBackColor = false;
+            this.buttonRemoveReservation.Click += new System.EventHandler(this.buttonRemoveReservation_Click);
             // 
-            // buttonEditRoom
+            // buttonEditReservation
             // 
-            this.buttonEditRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
-            this.buttonEditRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEditRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
-            this.buttonEditRoom.Location = new System.Drawing.Point(272, 486);
-            this.buttonEditRoom.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEditRoom.Name = "buttonEditRoom";
-            this.buttonEditRoom.Size = new System.Drawing.Size(140, 41);
-            this.buttonEditRoom.TabIndex = 13;
-            this.buttonEditRoom.Text = "Edit";
-            this.buttonEditRoom.UseVisualStyleBackColor = false;
+            this.buttonEditReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
+            this.buttonEditReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonEditReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
+            this.buttonEditReservation.Location = new System.Drawing.Point(272, 486);
+            this.buttonEditReservation.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEditReservation.Name = "buttonEditReservation";
+            this.buttonEditReservation.Size = new System.Drawing.Size(140, 41);
+            this.buttonEditReservation.TabIndex = 13;
+            this.buttonEditReservation.Text = "Edit";
+            this.buttonEditReservation.UseVisualStyleBackColor = false;
+            this.buttonEditReservation.Click += new System.EventHandler(this.buttonEditReservation_Click);
             // 
-            // buttonAddRoom
+            // buttonAddReservation
             // 
-            this.buttonAddRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
-            this.buttonAddRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAddRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
-            this.buttonAddRoom.Location = new System.Drawing.Point(11, 486);
-            this.buttonAddRoom.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddRoom.Name = "buttonAddRoom";
-            this.buttonAddRoom.Size = new System.Drawing.Size(139, 41);
-            this.buttonAddRoom.TabIndex = 12;
-            this.buttonAddRoom.Text = "Add new room";
-            this.buttonAddRoom.UseVisualStyleBackColor = false;
+            this.buttonAddReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(55)))), ((int)(((byte)(31)))));
+            this.buttonAddReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(221)))), ((int)(((byte)(186)))));
+            this.buttonAddReservation.Location = new System.Drawing.Point(11, 486);
+            this.buttonAddReservation.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddReservation.Name = "buttonAddReservation";
+            this.buttonAddReservation.Size = new System.Drawing.Size(139, 41);
+            this.buttonAddReservation.TabIndex = 12;
+            this.buttonAddReservation.Text = "Add new room";
+            this.buttonAddReservation.UseVisualStyleBackColor = false;
+            this.buttonAddReservation.Click += new System.EventHandler(this.buttonAddReservation_Click);
             // 
             // panel1
             // 
@@ -133,9 +137,9 @@ namespace Hotel_System
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.comboBoxRoomType);
             this.panel1.Controls.Add(this.buttonClearFields);
-            this.panel1.Controls.Add(this.buttonRemoveRoom);
-            this.panel1.Controls.Add(this.buttonEditRoom);
-            this.panel1.Controls.Add(this.buttonAddRoom);
+            this.panel1.Controls.Add(this.buttonRemoveReservation);
+            this.panel1.Controls.Add(this.buttonEditReservation);
+            this.panel1.Controls.Add(this.buttonAddReservation);
             this.panel1.Controls.Add(this.dataGridViewClient);
             this.panel1.Controls.Add(this.RoomType);
             this.panel1.Controls.Add(this.textBoxClientID);
@@ -339,9 +343,9 @@ namespace Hotel_System
 
         private System.Windows.Forms.ComboBox comboBoxRoomType;
         private System.Windows.Forms.Button buttonClearFields;
-        private System.Windows.Forms.Button buttonRemoveRoom;
-        private System.Windows.Forms.Button buttonEditRoom;
-        private System.Windows.Forms.Button buttonAddRoom;
+        private System.Windows.Forms.Button buttonRemoveReservation;
+        private System.Windows.Forms.Button buttonEditReservation;
+        private System.Windows.Forms.Button buttonAddReservation;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateIn;
         private System.Windows.Forms.Label label5;
