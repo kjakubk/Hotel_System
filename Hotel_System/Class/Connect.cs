@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Hotel_System
 {   /*
      * This class will make the connection between app and mysql DB
-     * First you need to download the mysql connectro and add it to your orihect
+     *
      */
     class Connect
     {
