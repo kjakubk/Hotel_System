@@ -22,16 +22,6 @@ namespace Hotel_System
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void buttonClearFields_Click(object sender, EventArgs e)
         {
             textBoxID.Text = "";
@@ -40,8 +30,6 @@ namespace Hotel_System
             textBoxPhoneNumber.Text = "";
             textBoxCountry.Text = "";
         }
-
-
 
         private void Manage_Clients_Form_Load(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel_System.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,96 @@ namespace Hotel_System
             InitializeComponent();
         }
 
-    
+        Room room = new Room();
+
+        private void Manage_Rooms_From_Load(object sender, EventArgs e)
+        {
+            comboBoxRoomType.DataSource = room.roomTypeList();
+            comboBoxRoomType.DisplayMember = "Label";
+            comboBoxRoomType.ValueMember = "Category_id";
+
+            dataGridViewClient.DataSource = room.GetRooms();
+
+        }
+
+        private void buttonAddRoom_Click(object sender, EventArgs e)
+        {
+            int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
+            int roomType = Convert.ToInt32(comboBoxRoomType.SelectedValue.ToString());
+            String phoneNumber = textBoxPhoneNumber.Text;
+
+            if(room.insertRoom(roomNumber,roomType,phoneNumber,"YES"))
+            {
+                MessageBox.Show("Room added successfully", "Add room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dataGridViewClient.DataSource = room.GetRooms();
+            }
+            else
+            {
+                MessageBox.Show("Something goes wrong", "Add room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
+        }
+
+        private void buttonClearFields_Click(object sender, EventArgs e)
+        {
+            textBoxRoomNumber.Text = "";
+            comboBoxRoomType.SelectedValue = 0;
+            textBoxPhoneNumber.Text = "";
+        }
+
+        private void dataGridViewClient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxRoomNumber.Text = dataGridViewClient.CurrentRow.Cells[0].Value.ToString();
+            comboBoxRoomType.SelectedValue = dataGridViewClient.CurrentRow.Cells[1].Value;
+            textBoxPhoneNumber.Text = dataGridViewClient.CurrentRow.Cells[2].Value.ToString();
+
+            dataGridViewClient.DataSource = room.GetRooms();
+        }
+
+        private void buttonEditRoom_Click(object sender, EventArgs e)
+        {
+            int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
+            int roomType = Convert.ToInt32(comboBoxRoomType.SelectedValue.ToString());
+            String phoneNumber = textBoxPhoneNumber.Text;
+            String isAvilable = "";
+
+            if(radioButtonYes.Checked)
+            {
+                isAvilable = "YES";
+            }
+            else if (radioButtonNo.Checked)
+            {
+                isAvilable= "NO";
+            }
+            
+            if(room.editRoom(roomNumber,roomType,phoneNumber,isAvilable))
+            {
+                MessageBox.Show("You successfuly edit room", "Room edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dataGridViewClient.DataSource = room.GetRooms();
+            }
+            else
+            {
+                MessageBox.Show("Smotehing goes wrong", "Room edit error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonRemoveRoom_Click(object sender, EventArgs e)
+        {
+            int roomNumber = Convert.ToInt32(textBoxRoomNumber.Text);
+
+            if (room.removeRoom(roomNumber))
+            {
+                MessageBox.Show("Room remove successfully", "Remove room", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dataGridViewClient.DataSource = room.GetRooms();
+            }
+            else
+            {
+                MessageBox.Show("Something goes wrong", "Remove room error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
