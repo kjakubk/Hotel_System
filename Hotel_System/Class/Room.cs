@@ -123,7 +123,7 @@ namespace Hotel_System.Class
 
         public DataTable roomByTypeList(int roomType)
         {
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `rooms` WHERE `RoomType` = @rty", connect.GetConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `rooms` WHERE `RoomType` = @rty and `Available` = 'YES'", connect.GetConnection());
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
 
@@ -133,6 +133,33 @@ namespace Hotel_System.Class
             adapter.Fill(table);
 
             return table;
+        }
+
+        //functio  to set room avilable column to NO
+        public bool setRoomToNo(int roomNumber)
+        {
+            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `Available`= 'NO' WHERE `RoomNumber` = @rnm", connect.GetConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+
+            command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
+
+            connect.openConnection();
+
+            if(command.ExecuteNonQuery() > 1)
+            {
+                connect.closeConnection();
+                return false;
+            }
+            else
+            {
+                connect.closeConnection();
+                return true;
+            }
+
+            
+
+         
         }
     }
 }

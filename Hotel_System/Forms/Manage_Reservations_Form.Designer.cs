@@ -251,6 +251,7 @@ namespace Hotel_System
             this.dataGridViewClient.RowTemplate.Height = 24;
             this.dataGridViewClient.Size = new System.Drawing.Size(526, 501);
             this.dataGridViewClient.TabIndex = 11;
+            this.dataGridViewClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClient_CellContentClick);
             // 
             // RoomType
             // 
