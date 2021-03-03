@@ -25,16 +25,16 @@ namespace Hotel_System.Class
             return table;
         }
         
-        public bool addtReservation(int roomNumber, int clientID, DateTime dateIn, DateTime dateOut)
+        public bool addtReservation(int reservationID,int roomNumber, int clientID, DateTime dateIn, DateTime dateOut)
         {
             MySqlCommand command = new MySqlCommand();
-            String insertQuery = "INSERT INTO `reservation`(`RoomNumber`, `ClientID`, `DateIN`, `DateOUT`) VALUES (@rnm,@cid,@din,@out)";
+            String insertQuery = "INSERT INTO `reservation`(`ReservationID`,`RoomNumber`, `ClientID`, `DateIN`, `DateOUT`) VALUES (@rid,@rnm,@cid,@din,@out)";
             command.CommandText = insertQuery;
             command.Connection = connect.GetConnection();
 
 
             //@rid,@rnm,@cid,@din,@out
-           
+            command.Parameters.Add("@rid", MySqlDbType.Int32).Value = reservationID;
             command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
             command.Parameters.Add("@cid", MySqlDbType.Int32).Value = clientID;
             command.Parameters.Add("@din", MySqlDbType.Date).Value = dateIn;
@@ -61,12 +61,13 @@ namespace Hotel_System.Class
         public bool editReservation(int reservationID, int roomNumber, int clientID, DateTime dateIn, DateTime dateOut)
         {
             MySqlCommand command = new MySqlCommand();
-            String editQuery = "UPDATE `rooms` SET `RoomNumber`=@rnm, `ClientID`=@cid, `DateIN`=@din, `DateOUT`=@out WHERE `ReservationID`=@rid";
+            String editQuery = "UPDATE `reservation` SET `RoomNumber`=@rnm, `ClientID`=@cid, `DateIN`=@din, `DateOUT`=@out WHERE `ReservationID`=@rid";
             command.CommandText = editQuery;
             command.Connection = connect.GetConnection();
 
 
             //@cid,@fnm,@snm,@phn,@cou
+            command.Parameters.Add("@rid", MySqlDbType.Int32).Value = reservationID;
             command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
             command.Parameters.Add("@cid", MySqlDbType.Int32).Value = clientID;
             command.Parameters.Add("@din", MySqlDbType.Date).Value = dateIn;

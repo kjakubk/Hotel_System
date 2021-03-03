@@ -72,12 +72,13 @@ namespace Hotel_System.Class
         public bool editRoom(int roomNumber, int roomType, String phoneNumber, String isAvailable)
         {
             MySqlCommand command = new MySqlCommand();
-            String editQuery = "UPDATE `rooms` SET `RoomType`=@rty,`RoomPhone`=@phn,`Available`=@isa WHERE `RoomNumber`=@rnm";
+            String editQuery = "UPDATE `rooms` SET  `RoomType`=@rty,`RoomPhone`=@phn,`Available`=@isa WHERE `RoomNumber`=@rnm";
             command.CommandText = editQuery;
             command.Connection = connect.GetConnection();
 
 
             //@cid,@fnm,@snm,@phn,@cou
+            
             command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
             command.Parameters.Add("@rty", MySqlDbType.Int32).Value = roomType;
             command.Parameters.Add("@phn", MySqlDbType.VarChar).Value = phoneNumber;
@@ -135,14 +136,29 @@ namespace Hotel_System.Class
             return table;
         }
 
-        //functio  to set room avilable column to NO
-        public bool setRoomToNo(int roomNumber)
+        public int getRoomByTypeList(int roomNumber)
         {
-            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `Available`= 'NO' WHERE `RoomNumber` = @rnm", connect.GetConnection());
+            MySqlCommand command = new MySqlCommand("SELECT `RoomType` FROM `rooms` WHERE `RoomNumber`=@rnm", connect.GetConnection());
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             DataTable table = new DataTable();
 
             command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            return Convert.ToInt32(table.Rows[0][0].ToString());
+        }
+
+        //functio  to set room avilable column to NO
+        public bool setRoomAvailable(int roomNumber, String YES_or_NO)
+        {
+            MySqlCommand command = new MySqlCommand("UPDATE `rooms` SET `Available`= @yesorno WHERE `RoomNumber` = @rnm", connect.GetConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            DataTable table = new DataTable();
+            //@yesorno
+            command.Parameters.Add("@rnm", MySqlDbType.Int32).Value = roomNumber;
+            command.Parameters.Add("@yesorno", MySqlDbType.VarChar).Value = YES_or_NO;
 
             connect.openConnection();
 
