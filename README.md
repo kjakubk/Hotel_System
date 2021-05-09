@@ -1,4 +1,5 @@
-1) Login window to the hotel reservation system.
+
+1) Login window to the hotel reservation system.     
 ![1](https://user-images.githubusercontent.com/61251819/117585512-251bb580-b113-11eb-94ea-f51d888fcba0.png)
 
 2) The main application window from which we can access the sections listed at the top of the screen.
